@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".Lista_Opciones" />
         <activity android:name=".DefecLog" />
-        <activity android:name=".Proyectplansumary"></activity>
+        <activity android:name=".Proyectplansumary" />
+        <activity android:name=".Time_log"></activity>
     </application>
 
 </manifest>

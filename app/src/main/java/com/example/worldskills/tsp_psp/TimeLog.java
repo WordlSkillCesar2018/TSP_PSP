@@ -12,9 +12,9 @@ Spinner spinner;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timelog);
         spinner=findViewById(R.id.spinner);
-        String[] fase=new String[]{"PLAN","DLD","CODE","COMPILE","UT","PM"};
+    /*    String[] fase=new String[]{"PLAN","DLD","CODE","COMPILE","UT","PM"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fase);
-        spinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);*/
 
 
 

@@ -22,11 +22,9 @@ public class Lista_Opciones extends AppCompatActivity {
 
 
     public void siguiente(View view) {
-        if (r1.isChecked()){
-            Intent intent = new Intent(this,DefecLog.class);
-            String a = getIntent().getExtras().getString("nombre");
-            intent.putExtra("nombre1",a);
-            startActivity(intent);
+        if (r1.isChecked()) {
+        Intent intent=new Intent(this,Time_log.class);
+        startActivity(intent);
         }if (r2.isChecked()){
             Intent intent = new Intent(this,DefecLog.class);
             String a = getIntent().getExtras().getString("nombre");
@@ -39,7 +37,6 @@ public class Lista_Opciones extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
 
     @Override
     public void onBackPressed() {
