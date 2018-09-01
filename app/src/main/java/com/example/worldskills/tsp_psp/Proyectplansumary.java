@@ -21,6 +21,7 @@ public class Proyectplansumary extends AppCompatActivity {
         viewPager.setAdapter(adaptador);
         tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+        getSupportActionBar().setTitle("Proyect Plan Sumary");
     }
 }
 

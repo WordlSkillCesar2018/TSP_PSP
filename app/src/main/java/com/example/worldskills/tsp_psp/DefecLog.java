@@ -13,10 +13,12 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 public class DefecLog extends AppCompatActivity {
 
@@ -41,6 +43,9 @@ public class DefecLog extends AppCompatActivity {
         a.setAdapter(adapter);
         b.setAdapter(adapter1);
         c.setAdapter(adapter1);
+        getSupportActionBar().setTitle("DefectLog");
+        String nombre = getIntent().getExtras().getString("nombre1");
+
     }
 
     @SuppressLint("NewApi")
@@ -66,7 +71,8 @@ public class DefecLog extends AppCompatActivity {
         defect=defectos.getText().toString();
         Developer developer = new Developer(getApplicationContext());
         SQLiteDatabase sqLiteDatabase = developer.getWritableDatabase();
-        sqLiteDatabase.execSQL("insert into defectLog values ('"+date+"','"+type+"','"+pi+"','"+pr+"','"+fix+"','"+defect+"')");
+        //sqLiteDatabase.execSQL("insert into defectLog values ('"+nombre+"',''"+date+"','"+type+"','"+pi+"','"+pr+"','"+fix+"','"+defect+"')");
+        Toast.makeText(getApplicationContext(),"Guardado",Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this,DefecLog.class);
         startActivity(intent);
         finish();
