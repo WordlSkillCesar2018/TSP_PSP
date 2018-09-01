@@ -16,8 +16,8 @@ public class Developer extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table proyectos(nombre text)");
-        db.execSQL("create table timeLog(phase text,star text,stop text,delta text, comments text, timetotal text)");
-        db.execSQL("create table defectLog (Date text, Type text, phase_inyected text, phase_removed text, fixtime text, defect text, timetotal text)");
+        db.execSQL("create table timeLog(nombre text, phase text,star text,stop text,delta text, comments text, timetotal text)");
+        db.execSQL("create table defectLog (nombre text, Date text, Type text, phase_inyected text, phase_removed text, fixtime text, defect text, timetotal text)");
     }
 
     @Override

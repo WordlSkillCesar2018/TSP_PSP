@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 String a = listadeproyectos.getItemAtPosition(i).toString();
                 Intent intent = new Intent(MainActivity.this,Lista_Opciones.class);
                 intent.putExtra("nombre",a);
-                Toast.makeText(getApplicationContext(),a,Toast.LENGTH_LONG).show();
                 startActivity(intent);
 
             }
