@@ -26,10 +26,13 @@ public class Developer extends SQLiteOpenHelper {
     }
 
     public ArrayList<String> llenar() {
-        ArrayList listar = new ArrayList<>();
+        ArrayList listar = new ArrayList<String>();
         SQLiteDatabase db = this.getWritableDatabase();
-        @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from proyectos", null);
-
+        Cursor cursor = db.rawQuery("select * from proyectos", null);
+            for (int i = 0 ; i>cursor.getColumnCount();i++){
+                listar.add(cursor.getColumnIndexOrThrow("nombre"));
+            }
+            listar = new ArrayList();
         return  listar;
     }
 }

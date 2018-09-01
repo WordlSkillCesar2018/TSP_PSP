@@ -1,10 +1,8 @@
 package com.example.worldskills.tsp_psp;
 
-import android.database.Cursor;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -33,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         nombreproyecto = findViewById(R.id.editText);
         listadeproyectos = findViewById(R.id.lista);
         Developer developer = new Developer(getApplicationContext());
-        listar = new ArrayList();
-        //listar= developer.llenar();
-        //ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,listar);
-        //listadeproyectos.setAdapter(arrayAdapter);
+        listar= developer.llenar();
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,listar);
+        listadeproyectos.setAdapter(arrayAdapter);
 
 
 
@@ -51,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         if (sqLiteDatabase!=null){
             sqLiteDatabase.execSQL("insert into Proyectos values ('"+a+"')");
             Toast.makeText(getApplicationContext(),"Proyecto registrado",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
         }
     }
 
