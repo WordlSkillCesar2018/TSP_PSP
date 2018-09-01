@@ -14,8 +14,8 @@ public class Developer extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table proyectos(nombre text)");
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL("create table proyectos('nombre')");
         //sqLiteDatabase.execSQL("create table timeLog()");
     //    sqLiteDatabase.execSQL("create table pefectLog ()");
     }
@@ -31,7 +31,7 @@ public class Developer extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery("select * from proyectos", null);
         do {
-            listaa.add(cursor.getColumnIndexOrThrow("nombre"));
+            listaa.add(("nombre"));
         }while(cursor.moveToNext());
         return  listaa;
     }

@@ -1,6 +1,8 @@
 package com.example.worldskills.tsp_psp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText nombreproyecto;
     ListView listadeproyectos;
-    ArrayList<String> listar;
-    ArrayAdapter<String> arrayAdapter;
+    ArrayList<String> listar=new ArrayList<>();
+    Developer developer;
+    SQLiteDatabase sqLiteDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +34,30 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         nombreproyecto = findViewById(R.id.editText);
         listadeproyectos = findViewById(R.id.aaaa);
-        Developer developer = new Developer(getApplicationContext());
-        listar = new ArrayList<String>();
-        listar=developer.llenar();
-        arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listar);
-        listadeproyectos.setAdapter(arrayAdapter);
+
+         developer = new Developer(getApplicationContext());
+         sqLiteDatabase = developer.getWritableDatabase();
+
+        //Cursor cursor = sqLiteDatabase.rawQuery("select * from proyectos", null);
 
 
+        if (sqLiteDatabase!= null){
+            Cursor cursor = sqLiteDatabase.rawQuery("select * from proyectos",null);
+            //StringBuffer stringBuffer = new StringBuffer();
+            if (cursor.moveToNext()){
+                listar.add(cursor.getString(0));
+
+            }
+            //nombre.setText(stringBuffer.toString());
+        }
+
+     //   nombreproyecto.setText(cursor.getString(0));
+            //Toast.makeText(this,cursor.getString(0),Toast.LENGTH_SHORT).show();
+            //listar.add(cursor.getString(2));
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listar);
+        listadeproyectos.setAdapter(adapter);
 
     }
 
@@ -45,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void registrarproyecto(View view) {
         String a = nombreproyecto.getText().toString();
-        Developer developer = new Developer(getApplicationContext());
-        SQLiteDatabase sqLiteDatabase = developer.getWritableDatabase();
         if (sqLiteDatabase!=null){
             sqLiteDatabase.execSQL("insert into Proyectos values ('"+a+"')");
             Toast.makeText(getApplicationContext(),"Proyecto registrado",Toast.LENGTH_LONG).show();
