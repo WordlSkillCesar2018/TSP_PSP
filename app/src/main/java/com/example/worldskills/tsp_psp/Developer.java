@@ -15,25 +15,14 @@ public class Developer extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table proyectos('nombre')");
-        //sqLiteDatabase.execSQL("create table timeLog()");
-    //    sqLiteDatabase.execSQL("create table pefectLog ()");
+        db.execSQL("create table proyectos(nombre text)");
+        db.execSQL("create table timeLog(phase text,star text,stop text,delta text, comments text, timetotal text)");
+        db.execSQL("create table defectLog (Date text, Type text, phase_inyected text, phase_removed text, fixtime text, defect text, timetotal text)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-    }
-
-    public ArrayList<String> llenar() {
-        ArrayList listaa = new ArrayList<String>();
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        Cursor cursor = db.rawQuery("select * from proyectos", null);
-        do {
-            listaa.add(("nombre"));
-        }while(cursor.moveToNext());
-        return  listaa;
     }
 }
 
