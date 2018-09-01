@@ -27,6 +27,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Hora Inicio"
+        app:fontFamily="@font/stoke"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spin" />
 
@@ -41,6 +42,7 @@
         android:layout_marginTop="12dp"
         android:onClick="inicio"
         android:text="Inicio"
+        android:fontFamily="@font/stoke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/hinicio"
         app:layout_constraintTop_toBottomOf="@+id/spin" />
@@ -49,6 +51,7 @@
         android:id="@+id/editText4"
         android:layout_width="291dp"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/stoke"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
@@ -70,6 +73,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Hora Final"
+        android:fontFamily="@font/stoke"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -84,6 +88,7 @@
         android:layout_marginTop="12dp"
         android:onClick="parar"
         android:text="Parar"
+        android:fontFamily="@font/stoke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -97,6 +102,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Tiempo Total"
+        app:fontFamily="@font/stoke"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -108,6 +114,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Delta"
+        app:fontFamily="@font/stoke"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -119,6 +126,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="52dp"
         android:ems="10"
+        android:fontFamily="@font/stoke"
         android:hint="Comentarios"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"

@@ -15,6 +15,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
+        android:fontFamily="@font/stoke"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -32,6 +33,7 @@
         android:layout_marginRight="17dp"
         android:layout_marginTop="8dp"
         android:text="Button"
+        android:fontFamily="@font/stoke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
@@ -57,6 +59,7 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
+                android:fontFamily="@font/stoke"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
         </LinearLayout>
