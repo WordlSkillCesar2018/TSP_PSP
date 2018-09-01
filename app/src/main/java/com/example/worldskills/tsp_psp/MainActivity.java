@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     EditText nombreproyecto;
     ListView listadeproyectos;
     ArrayList<String> listar;
+    ArrayAdapter<String> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         nombreproyecto = findViewById(R.id.editText);
-        listadeproyectos = findViewById(R.id.lista);
+        listadeproyectos = findViewById(R.id.aaaa);
         Developer developer = new Developer(getApplicationContext());
-        listar= developer.llenar();
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,listar);
+        listar = new ArrayList<String>();
+        listar=developer.llenar();
+        arrayAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listar);
         listadeproyectos.setAdapter(arrayAdapter);
 
 

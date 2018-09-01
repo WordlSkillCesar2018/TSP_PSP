@@ -12,6 +12,8 @@ public class Lista_Opciones extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista__opciones);
-
+        r1 = findViewById(R.id.radioButton);
+        r2 = findViewById(R.id.radioButton2);
+        r3 = findViewById(R.id.radioButton3);
     }
 }
