@@ -21,25 +21,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="TimeLog" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="DefectLog" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="RadioButton" />
+            android:text="Proyect plan sumary" />
+
     </RadioGroup>
 
     <Button
@@ -52,7 +53,8 @@
         android:layout_marginRight="116dp"
         android:layout_marginStart="116dp"
         android:layout_marginTop="58dp"
-        android:text="Button"
+        android:text="Siguiente"
+        android:onClick="siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

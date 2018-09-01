@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -34,17 +35,26 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         nombreproyecto = findViewById(R.id.editText);
         listadeproyectos = findViewById(R.id.aaaa);
-
          developer = new Developer(getApplicationContext());
          sqLiteDatabase = developer.getWritableDatabase();
 
         //Cursor cursor = sqLiteDatabase.rawQuery("select * from proyectos", null);
 
+        listadeproyectos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String a = listadeproyectos.getItemAtPosition(i).toString();
+                Intent intent = new Intent(MainActivity.this,Lista_Opciones.class);
+                intent.putExtra("nombre",a);
+                Toast.makeText(getApplicationContext(),a,Toast.LENGTH_LONG).show();
+                startActivity(intent);
 
+            }
+        });
         if (sqLiteDatabase!= null){
             Cursor cursor = sqLiteDatabase.rawQuery("select * from proyectos",null);
             //StringBuffer stringBuffer = new StringBuffer();
-            if (cursor.moveToNext()){
+            while (cursor.moveToNext()){
                 listar.add(cursor.getString(0));
 
             }
